@@ -83,8 +83,7 @@ function send_verification(){
 function forgot_password(){
 
   var userEmail = document.getElementById("email_field").value;
-  var userPass = document.getElementById("password_field").value;
-
+  
   var auth = firebase.auth();
   
 var emailAddress = userEmail;
@@ -98,6 +97,43 @@ auth.sendPasswordResetEmail(emailAddress).then(function() {
 });
 
 }
+
+
+function deleteacc(){
+
+  var rand = Math.round(Math.random()*100000);
+  if(window.prompt("Type the number to confirm \n " + "\t\t" + rand) == rand)
+  {
+    var user = firebase.auth().currentUser;
+    var userProvidedPassword = window.prompt("Re-enter your Password");
+    var credential = firebase.auth.EmailAuthProvider.credential(
+      user.email, 
+      userProvidedPassword
+  );
+
+// Prompt the user to re-provide their sign-in credentials
+
+user.reauthenticateWithCredential(credential).then(function() {
+  // User re-authenticated.
+}).catch(function(error) {
+  // An error happened.
+});
+
+user.delete().then(function() {
+  // User deleted.
+  window.alert("User deleted");
+}).catch(function(error) {
+  // An error happened.
+  window.alert("User NOT deleted!");
+});
+
+
+  }else{
+    window.alert("Err! Please type "+rand);
+  }
+  
+}
+
 
 
 function logout(){
