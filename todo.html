@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>To Do List</title>
+  <!--google font-->
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <!--css file-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <button id="todo" type="button" class="btn btn-outline-primary btn-lg active" style="margin: auto; float:left; width: 10%; top: 25%; bottom:25%; padding: 25px; font-size: 25px;" onclick="window.location.href = 'todo.html';">List</button>
+  <button id="user" type="button" class="btn btn-outline-primary" style="margin: auto; float:right; width: 10%; top: 25%; bottom:25%; padding: 25px; font-size: 25px" onclick="window.location.href = 'index.html';">User</button>
+      
+
+  <!--firebase-->
+  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyALiyjT9G-zOcftDbgP3yLOMBwVQhbtCwI",
+      authDomain: "xclry-3a552.firebaseapp.com",
+      databaseURL: "https://xclry-3a552.firebaseio.com",
+      projectId: "xclry-3a552",
+      storageBucket: "xclry-3a552.appspot.com",
+      messagingSenderId: "822435656014",
+      appId: "1:822435656014:web:566bb22be322a400ee6e1f",
+      measurementId: "G-EMGR0LJKRT"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+  <!--js file-->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="index.js"></script>
+ 
+
+
+</body>
+</html>
