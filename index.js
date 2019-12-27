@@ -80,6 +80,26 @@ function send_verification(){
 
 }
 
+function forgot_password(){
+
+  var userEmail = document.getElementById("email_field").value;
+  var userPass = document.getElementById("password_field").value;
+
+  var auth = firebase.auth();
+  
+var emailAddress = userEmail;
+
+auth.sendPasswordResetEmail(emailAddress).then(function() {
+  // Email sent.
+  window.alert("Password reset link has been generated!");
+}).catch(function(error) {
+  // An error happened.
+  window.alert("Err!");
+});
+
+}
+
+
 function logout(){
   firebase.auth().signOut();
 }
