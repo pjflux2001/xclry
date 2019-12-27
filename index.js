@@ -137,7 +137,41 @@ user.delete().then(function() {
   
 }
 
+function change_pass(){
 
+
+var user = firebase.auth().currentUser;
+    var userProvidedPassword = window.prompt("Enter your old Password : ");
+    var credential = firebase.auth.EmailAuthProvider.credential(
+      user.email, 
+      userProvidedPassword
+  );
+
+// Prompt the user to re-provide their sign-in credentials
+
+user.reauthenticateWithCredential(credential).then(function() {
+  // User re-authenticated.
+    var user = firebase.auth().currentUser;
+  var newPassword = window.prompt("Enter your new Password : ");
+
+  user.updatePassword(newPassword).then(function() {
+    // Update successful.
+    window.alert("Password Updated!");
+  }).catch(function(error) {
+    // An error happened.
+    window.alert("Password NOT Updated!");
+  });
+  
+}).catch(function(error) {
+  // An error happened.
+  window.alert("Password NOT Updated!");
+});
+
+
+
+
+
+}
 
 
 function logout(){
