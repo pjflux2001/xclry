@@ -12,26 +12,26 @@
 <body>
 
   <!--login div-->
-  <div id="login_div" class="main-div bg-dark">
+  <div id="login_div" class="main-div bg-dark" >
     <h3 style="color:White">Credentials</h3>
     <input type="email" placeholder="Email..." id="email_field" />
     <input type="password" placeholder="Password..." id="password_field" />
-    <button onclick="login()">Login</button>
+    <button type="button" class="btn btn-primary" type="button" data-toggle="tooltip" data-placement="right" title="Login" onclick="login()">Login</button>
     <br>
-    <button onclick="create_account()">Sign Up</button>
+    <button type="button" class="btn btn-primary" type="button" data-toggle="tooltip" data-placement="right" title="Sign Up"  onclick="create_account()">Sign Up</button>
     <br>
-    <button onclick="forgot_password()">Reset Password</button>
+    <button type="button" class="btn btn-primary" type="button" data-toggle="tooltip" data-placement="right" title="Reset Password"  onclick="forgot_password()">Reset Password</button>
   </div>
 
   <!--logout & user div-->
   <div id="user_div" class="loggedin-div">
     <h3>Welcome!</h3>
     <p id="user_para">You're logged in.</p>
-    <button onclick="logout()">Logout</button>
+    <button type="button" class="btn btn-primary" type="button" data-toggle="tooltip" data-placement="right" title="Logout"  onclick="logout()">Logout</button>
     <br>
-    <button id="verify_btn" onclick="send_verification()"> Send Verification Email</button>
+    <button type="button" class="btn btn-primary" type="button" data-toggle="tooltip" data-placement="right" title="Send Verification Email"  id="verify_btn" onclick="send_verification()"> Send Verification Email</button>
     <br>
-    <button onclick="deleteacc()">Delete Account</button>
+    <button type="button" class="btn btn-primary" type="button" data-toggle="tooltip" data-placement="right" title="Delete Account"  onclick="deleteacc()">Delete Account</button>
   </div>
 
   <!--firebase-->
