@@ -207,7 +207,17 @@ $("#add_cabpool").click(function(){
     comments: $("#v6").val()
   }
 
-  addcab(cab);
   
-});
+var cabRef= firebase.databse().ref().child("cabs");
+  cabRef.on("value", function(snapshot){
+    snapshot.foreach(function(childsnapshot){
+    var item = childsnapshot.val();
+      item.key = childsnapshot.key;
+      console.log(item);
+      console.log(item.key);
+      
+    });
+    console.log(snapshot);
+  });
+
 
