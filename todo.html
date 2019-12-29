@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>To Do List</title>
+  <!--google font-->
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <!--css file-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  </head>
+<body>
+
+  <button id="todo" type="button" class="btn btn-outline-primary btn-lg active" style="margin: auto; float:left; width: 10%; top: 25%; bottom:25%; padding: 25px; font-size: 25px;" onclick="window.location.href = 'todo.html';">List</button>
+  <button id="user" type="button" class="btn btn-outline-primary" style="margin: auto; float:right; width: 10%; top: 25%; bottom:25%; padding: 25px; font-size: 25px" onclick="window.location.href = 'index.html';">User</button>
+      
+
+  <!--cabpool form-->
+
+  <div class="container card" id="cabpool_form" style="margin: auto; width: 50%; border: 2px dotted black; padding: 25px;">
+
+    <form>
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label for="v1">Date of Cabpool *</label>
+          <input id="v1" type="date" class="form-control" min="2020-01-01" max="2020-06-30" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label for="validationDefault01">Time of Cabpool *</label>
+          <input id="v2" type="time" class="form-control" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Start Location*</label>
+          <select id="v3" class="custom-select my-1 mr-sm-2" required>
+            <option selected>Other</option>
+            <option value="1">Campus</option>
+            <option value="2">Panjim</option>
+            <option value="3">Madgaon</option>
+          </select>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label class="my-1 mr-2" for="inlineFormCustomSelectPref">End Location*</label>
+          <select id="v4" class="custom-select my-1 mr-sm-2" required>
+            <option selected>Other</option>
+            <option value="1">Campus</option>
+            <option value="2">Panjim</option>
+            <option value="3">Madgaon</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-3 mb-3">
+          <label for="v5">Contact Number</label>
+          <input id="v5" type="text" pattern="[1-9]{1}[0-9]{9}" class="form-control" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-6 mb-3">
+          <label for="validationDefault03">Comments</label>
+          <input id="v6" type="text" class="form-control" style="width: 500px; height:100px;">
+        </div>
+            </div>
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+          <label class="form-check-label" for="invalidCheck2">
+            Agree to terms and conditions
+          </label>
+        </div>
+      </div>
+      <button id="add_cabpool" class="btn btn-primary" type="button">Create</button>
+    </form>
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--firebase-->
+  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyALiyjT9G-zOcftDbgP3yLOMBwVQhbtCwI",
+      authDomain: "xclry-3a552.firebaseapp.com",
+      databaseURL: "https://xclry-3a552.firebaseio.com",
+      projectId: "xclry-3a552",
+      storageBucket: "xclry-3a552.appspot.com",
+      messagingSenderId: "822435656014",
+      appId: "1:822435656014:web:566bb22be322a400ee6e1f",
+      measurementId: "G-EMGR0LJKRT"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+  
+  <!--js file-->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="index.js"></script>
+ 
+
+
+</body>
+</html>
