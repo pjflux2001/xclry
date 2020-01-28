@@ -18,8 +18,6 @@ firebase.auth().onAuthStateChanged(function(user) {
     writeUserData(user);
 
 
-    var user = firebase.auth().currentUser;
-
     if(user != null){
 
       var email_id = user.email;
@@ -205,6 +203,7 @@ $("#add_cabpool").click(function(){
     
     contact: $("#v5").val(),
     comments: $("#v6").val()
-  }
+  };
 
-  }
+  });
+                        
