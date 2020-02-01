@@ -21,6 +21,7 @@
   <div class="container card" id="cabpool_form" style="margin: auto; width: 50%; border: 2px dotted black; padding: 25px;">
 
     <form>
+      <div>
       <div class="form-row">
         <div class="col-md-4 mb-3">
           <label for="v1">Date of Cabpool *</label>
@@ -62,7 +63,7 @@
       <div class="form-row">
         <div class="col-md-6 mb-3">
           <label for="validationDefault03">Comments</label>
-          <input id="v6" type="text" class="form-control" style="width: 500px; height:100px;">
+          <input id="v6" type="text" class="form-control" style="size: auto;">
         </div>
             </div>
       <div class="form-group">
@@ -73,8 +74,20 @@
           </label>
         </div>
       </div>
-      <button id="add_cabpool" class="btn btn-primary" type="button">Create</button>
+      <button id="add_cabpool" class="btn btn-primary" type="button" >Create</button>
+      <br>
+      <button onClick="window.location.href=window.location.href; alert('Form reset!');" class="btn btn-warning" type="button">Reset</button>
+    </div>
     </form>
+  </div>
+
+
+
+  <!--show cabs-->
+
+  <div class="container" id="show-cabs">
+    <h1> Avaibale Cabpools </h1>
+
   </div>
 
    <!--firebase-->
@@ -98,7 +111,7 @@
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
+
   </script>
   
   <!--js file-->
